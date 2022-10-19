@@ -1,0 +1,16 @@
+##gff-version 3
+##sequence-region CbK 1 4
+CbK	progressiveMauve	match	1585	1690	.	+	.	ID=m_1_0_Karma;Name=Karma_gp003;target=Karma
+CbK	progressiveMauve	match_part	1585	1618	94.1176470588	+	.	Parent=m_1_0_Karma
+CbK	progressiveMauve	match	1585	1690	.	+	.	ID=m_1_1_Magneto;Name=Magneto_gp003;target=Magneto
+CbK	progressiveMauve	match_part	1585	1618	94.1176470588	+	.	Parent=m_1_1_Magneto
+
+CbK	progressiveMauve	match	2383	2569	.	+	.	ID=m_2_0_Karma;Name=Karma_gp004;target=Karma
+CbK	progressiveMauve	match_part	2383	2443	96.7213114754	+	.	Parent=m_2_0_Karma
+CbK	progressiveMauve	match	2383	2569	.	+	.	ID=m_2_1_Magneto;Name=Magneto_gp004;target=Magneto
+CbK	progressiveMauve	match_part	2383	2443	98.3606557377	+	.	Parent=m_2_1_Magneto
+
+CbK	progressiveMauve	match	2668	3472	.	+	.	ID=m_3_0_Karma;Name=Karma_gp005;target=Karma
+CbK	progressiveMauve	match_part	2668	2934	97.3782771536	+	.	Parent=m_3_0_Karma
+CbK	progressiveMauve	match	2668	3472	.	+	.	ID=m_3_1_Magneto;Name=Magneto_gp005;target=Magneto
+CbK	progressiveMauve	match_part	2668	2934	96.6292134831	+	.	Parent=m_3_1_Magneto

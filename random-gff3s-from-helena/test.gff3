@@ -1,0 +1,38 @@
+##gff-version 3
+##sequence-region CbK 1 4
+CbK	progressiveMauve	match	1586	1690	.	+	.	ID=m_0_0_Karma;Name=Karma_gp003;target=Karma
+CbK	progressiveMauve	match_part	1586	1594	100.0	+	.	Parent=m_0_0_Karma
+CbK	progressiveMauve	match_part	1595	1603	100.0	+	.	Parent=m_0_0_Karma
+CbK	progressiveMauve	match_part	1604	1612	100.0	+	.	Parent=m_0_0_Karma
+CbK	progressiveMauve	match_part	1613	1621	100.0	+	.	Parent=m_0_0_Karma
+CbK	progressiveMauve	match_part	1622	1630	100.0	+	.	Parent=m_0_0_Karma
+CbK	progressiveMauve	match_part	1631	1639	33.3333333333	+	.	Parent=m_0_0_Karma
+CbK	progressiveMauve	match_part	1640	1648	66.6666666667	+	.	Parent=m_0_0_Karma
+CbK	progressiveMauve	match_part	1649	1657	100.0	+	.	Parent=m_0_0_Karma
+CbK	progressiveMauve	match_part	1658	1666	100.0	+	.	Parent=m_0_0_Karma
+CbK	progressiveMauve	match_part	1667	1675	100.0	+	.	Parent=m_0_0_Karma
+CbK	progressiveMauve	match_part	1676	1684	66.6666666667	+	.	Parent=m_0_0_Karma
+CbK	progressiveMauve	match_part	1685	1687	100.0	+	.	Parent=m_0_0_Karma
+##gff-version 3
+##sequence-region Karma 1 4
+Karma	progressiveMauve	match	1587	1691	.	+	.	ID=m_0_0_CbK;Name=CbK_gp003;target=CbK
+Karma	progressiveMauve	match_part	1587	1595	100.0	+	.	Parent=m_0_0_CbK
+Karma	progressiveMauve	match_part	1596	1604	100.0	+	.	Parent=m_0_0_CbK
+Karma	progressiveMauve	match_part	1605	1613	100.0	+	.	Parent=m_0_0_CbK
+Karma	progressiveMauve	match_part	1614	1622	100.0	+	.	Parent=m_0_0_CbK
+Karma	progressiveMauve	match_part	1623	1631	100.0	+	.	Parent=m_0_0_CbK
+Karma	progressiveMauve	match_part	1632	1640	33.3333333333	+	.	Parent=m_0_0_CbK
+Karma	progressiveMauve	match_part	1641	1649	66.6666666667	+	.	Parent=m_0_0_CbK
+Karma	progressiveMauve	match_part	1650	1658	100.0	+	.	Parent=m_0_0_CbK
+Karma	progressiveMauve	match_part	1659	1667	100.0	+	.	Parent=m_0_0_CbK
+Karma	progressiveMauve	match_part	1668	1676	100.0	+	.	Parent=m_0_0_CbK
+Karma	progressiveMauve	match_part	1677	1685	66.6666666667	+	.	Parent=m_0_0_CbK
+Karma	progressiveMauve	match_part	1686	1688	100.0	+	.	Parent=m_0_0_CbK
+##gff-version 3
+##sequence-region Colossus 1 4
+##gff-version 3
+##sequence-region Rogue 1 4
+##gff-version 3
+##sequence-region Magneto 1 4
+##gff-version 3
+##sequence-region Swift 1 4

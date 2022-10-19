@@ -1,0 +1,60 @@
+##gff-version 3
+##sequence-region Merlin 1 172745
+Merlin	feature	Chain	26734	27009	.	+	.	Description=Transmembrane protein;ID=tmhmm_tmd_1;Note=Transmembrane protein - N out C in;Target=CDS192
+Merlin	TMHMM	Topological domain	26731	26757	.	+	.	Note=Extracellular;Parent=tmhmm_tmd_1;evidence=ECO:0000255
+Merlin	TMHMM	Transmembrane	26758	26826	.	+	.	Note=Helical;Parent=tmhmm_tmd_1;evidence=ECO:0000255
+Merlin	TMHMM	Topological domain	26827	27009	.	+	.	Note=Cytoplasmic;Parent=tmhmm_tmd_1;evidence=ECO:0000255
+Merlin	feature	Chain	46414	46761	.	+	.	Description=Transmembrane protein;ID=tmhmm_tmd_2;Note=Transmembrane protein - N in C out;Target=CDS382
+Merlin	TMHMM	Topological domain	46411	46446	.	+	.	Note=Cytoplasmic;Parent=tmhmm_tmd_2;evidence=ECO:0000255
+Merlin	TMHMM	Transmembrane	46447	46515	.	+	.	Note=Helical;Parent=tmhmm_tmd_2;evidence=ECO:0000255
+Merlin	TMHMM	Topological domain	46516	46527	.	+	.	Note=Extracellular;Parent=tmhmm_tmd_2;evidence=ECO:0000255
+Merlin	TMHMM	Transmembrane	46528	46596	.	+	.	Note=Helical;Parent=tmhmm_tmd_2;evidence=ECO:0000255
+Merlin	TMHMM	Topological domain	46597	46761	.	+	.	Note=Cytoplasmic;Parent=tmhmm_tmd_2;evidence=ECO:0000255
+Merlin	feature	Chain	105904	106827	.	+	.	Description=Transmembrane protein;ID=tmhmm_tmd_3;Note=Transmembrane protein - N in C out;Target=CDS1232
+Merlin	TMHMM	Topological domain	105901	105936	.	+	.	Note=Cytoplasmic;Parent=tmhmm_tmd_3;evidence=ECO:0000255
+Merlin	TMHMM	Transmembrane	105937	106005	.	+	.	Note=Helical;Parent=tmhmm_tmd_3;evidence=ECO:0000255
+Merlin	TMHMM	Topological domain	106006	106827	.	+	.	Parent=tmhmm_tmd_3;evidence=ECO:0000255
+Merlin	feature	Chain	133705	134853	.	+	.	Description=Transmembrane protein;ID=tmhmm_tmd_4;Note=Transmembrane protein - N in C out;Target=CDS1714
+Merlin	TMHMM	Topological domain	133702	133734	.	+	.	Note=Cytoplasmic;Parent=tmhmm_tmd_4;evidence=ECO:0000255
+Merlin	TMHMM	Transmembrane	133735	133803	.	+	.	Note=Helical;Parent=tmhmm_tmd_4;evidence=ECO:0000255
+Merlin	TMHMM	Topological domain	133804	134853	.	+	.	Parent=tmhmm_tmd_4;evidence=ECO:0000255
+Merlin	feature	Chain	121469	121834	.	+	.	Description=Transmembrane protein;ID=tmhmm_tmd_5;Note=Transmembrane protein - N out C in;Target=CDS3798
+Merlin	TMHMM	Topological domain	121466	121492	.	+	.	Note=Extracellular;Parent=tmhmm_tmd_5;evidence=ECO:0000255
+Merlin	TMHMM	Transmembrane	121493	121561	.	+	.	Note=Helical;Parent=tmhmm_tmd_5;evidence=ECO:0000255
+Merlin	TMHMM	Topological domain	121562	121834	.	+	.	Note=Cytoplasmic;Parent=tmhmm_tmd_5;evidence=ECO:0000255
+Merlin	feature	Chain	56163	56519	.	+	.	Description=Transmembrane protein;ID=tmhmm_tmd_6;Note=Transmembrane protein - N out C in;Target=CDS4824
+Merlin	TMHMM	Topological domain	56160	56186	.	+	.	Note=Extracellular;Parent=tmhmm_tmd_6;evidence=ECO:0000255
+Merlin	TMHMM	Transmembrane	56187	56255	.	+	.	Note=Helical;Parent=tmhmm_tmd_6;evidence=ECO:0000255
+Merlin	TMHMM	Topological domain	56256	56519	.	+	.	Note=Cytoplasmic;Parent=tmhmm_tmd_6;evidence=ECO:0000255
+Merlin	feature	Chain	130515	130907	.	+	.	Description=Transmembrane protein;ID=tmhmm_tmd_7;Note=Transmembrane protein - N in C out;Target=CDS5922
+Merlin	TMHMM	Topological domain	130512	130547	.	+	.	Note=Cytoplasmic;Parent=tmhmm_tmd_7;evidence=ECO:0000255
+Merlin	TMHMM	Transmembrane	130548	130616	.	+	.	Note=Helical;Parent=tmhmm_tmd_7;evidence=ECO:0000255
+Merlin	TMHMM	Topological domain	130617	130643	.	+	.	Note=Extracellular;Parent=tmhmm_tmd_7;evidence=ECO:0000255
+Merlin	TMHMM	Transmembrane	130644	130712	.	+	.	Note=Helical;Parent=tmhmm_tmd_7;evidence=ECO:0000255
+Merlin	TMHMM	Topological domain	130713	130907	.	+	.	Note=Cytoplasmic;Parent=tmhmm_tmd_7;evidence=ECO:0000255
+Merlin	feature	Chain	131829	132923	.	+	.	Description=Transmembrane protein;ID=tmhmm_tmd_8;Note=Transmembrane protein - N in C out;Target=CDS5945
+Merlin	TMHMM	Topological domain	131826	131843	.	+	.	Note=Cytoplasmic;Parent=tmhmm_tmd_8;evidence=ECO:0000255
+Merlin	TMHMM	Transmembrane	131844	131912	.	+	.	Note=Helical;Parent=tmhmm_tmd_8;evidence=ECO:0000255
+Merlin	TMHMM	Topological domain	131913	132923	.	+	.	Parent=tmhmm_tmd_8;evidence=ECO:0000255
+Merlin	feature	Chain	84316	85014	.	-	.	Description=Transmembrane protein;ID=tmhmm_tmd_9;Note=Transmembrane protein - N in C out;Target=CDS7290
+Merlin	TMHMM	Topological domain	84982	85017	.	-	.	Note=Cytoplasmic;Parent=tmhmm_tmd_9;evidence=ECO:0000255
+Merlin	TMHMM	Transmembrane	84913	84981	.	-	.	Note=Helical;Parent=tmhmm_tmd_9;evidence=ECO:0000255
+Merlin	TMHMM	Topological domain	84316	84912	.	-	.	Parent=tmhmm_tmd_9;evidence=ECO:0000255
+Merlin	feature	Chain	26335	29130	.	-	.	Description=Transmembrane protein;ID=tmhmm_tmd_10;Note=Transmembrane protein - N in C out;Target=CDS7777
+Merlin	TMHMM	Topological domain	29098	29133	.	-	.	Note=Cytoplasmic;Parent=tmhmm_tmd_10;evidence=ECO:0000255
+Merlin	TMHMM	Transmembrane	29029	29097	.	-	.	Note=Helical;Parent=tmhmm_tmd_10;evidence=ECO:0000255
+Merlin	TMHMM	Topological domain	26335	29028	.	-	.	Parent=tmhmm_tmd_10;evidence=ECO:0000255
+Merlin	feature	Chain	126356	126703	.	-	.	Description=Transmembrane protein;ID=tmhmm_tmd_11;Note=Transmembrane protein - N in C out;Target=CDS10378
+Merlin	TMHMM	Topological domain	126671	126706	.	-	.	Note=Cytoplasmic;Parent=tmhmm_tmd_11;evidence=ECO:0000255
+Merlin	TMHMM	Transmembrane	126602	126670	.	-	.	Note=Helical;Parent=tmhmm_tmd_11;evidence=ECO:0000255
+Merlin	TMHMM	Topological domain	126560	126601	.	-	.	Note=Extracellular;Parent=tmhmm_tmd_11;evidence=ECO:0000255
+Merlin	TMHMM	Transmembrane	126491	126559	.	-	.	Note=Helical;Parent=tmhmm_tmd_11;evidence=ECO:0000255
+Merlin	TMHMM	Topological domain	126356	126490	.	-	.	Note=Cytoplasmic;Parent=tmhmm_tmd_11;evidence=ECO:0000255
+Merlin	feature	Chain	117905	118171	.	-	.	Description=Transmembrane protein;ID=tmhmm_tmd_12;Note=Transmembrane protein - N out C in;Target=CDS10405
+Merlin	TMHMM	Topological domain	118133	118174	.	-	.	Note=Extracellular;Parent=tmhmm_tmd_12;evidence=ECO:0000255
+Merlin	TMHMM	Transmembrane	118064	118132	.	-	.	Note=Helical;Parent=tmhmm_tmd_12;evidence=ECO:0000255
+Merlin	TMHMM	Topological domain	117905	118063	.	-	.	Note=Cytoplasmic;Parent=tmhmm_tmd_12;evidence=ECO:0000255
+Merlin	feature	Chain	37382	40519	.	-	.	Description=Transmembrane protein;ID=tmhmm_tmd_13;Note=Transmembrane protein - N in C out;Target=CDS11297
+Merlin	TMHMM	Topological domain	40505	40522	.	-	.	Note=Cytoplasmic;Parent=tmhmm_tmd_13;evidence=ECO:0000255
+Merlin	TMHMM	Transmembrane	40436	40504	.	-	.	Note=Helical;Parent=tmhmm_tmd_13;evidence=ECO:0000255
+Merlin	TMHMM	Topological domain	37382	40435	.	-	.	Parent=tmhmm_tmd_13;evidence=ECO:0000255
