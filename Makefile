@@ -1,4 +1,4 @@
 GFFS := $(wildcard random-gff3s-from-helena/*)
 
-stats.md: parse.py $(GFFS)
-	python parse.py > stats.md
+stats.md: parse-headers.py $(GFFS)
+	python parse-headers.py > stats.md
