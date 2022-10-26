@@ -12,6 +12,12 @@ class List(list):
     def len(self):
         return len(self)
 
+    def map(self, expr):
+        return List(map(expr, self))
+
+    def uniq(self):
+        return List(set(self))
+
 
 class String(str):
 
