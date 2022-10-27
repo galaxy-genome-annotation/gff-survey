@@ -78,6 +78,7 @@ Feature | Count
 
 Score Range | Count
 ---------- | -----
+`Does Not Use Scores` | 94
 `[0, 100]` | 26
 `[0, 10000]` | 13
 `[-2.8, 8728.0]` | 2

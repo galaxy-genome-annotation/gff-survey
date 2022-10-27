@@ -88,6 +88,8 @@ for fn in sorted(glob.glob("**/*.gff3")):
                 # very sus.
                 score_range[f'[{sus_min}, {sus_max}]'] +=1
                 # stderr(sus_min, sus_max)
+        else:
+            score_range['Does Not Use Scores'] += 1
 
         if len(parts) > 8:
             seen_tags = List()
