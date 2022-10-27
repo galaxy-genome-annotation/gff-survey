@@ -52,6 +52,8 @@ tab_count = Counter()
 tools = Counter()
 feature_type = Counter()
 score_range = Counter()
+tags = Counter()
+tags_perfile = Counter()
 
 for fn in sorted(glob.glob("**/*.gff3")):
     file_count += 1
@@ -87,6 +89,26 @@ for fn in sorted(glob.glob("**/*.gff3")):
                 score_range[f'[{sus_min}, {sus_max}]'] +=1
                 # stderr(sus_min, sus_max)
 
+        if len(parts) > 8:
+            seen_tags = List()
+            for tag_pair in parts[8].split(';'):
+                if tag_pair.strip() == '.':
+                    tags['__.__'] += 1
+                    seen_tags.append('__.__')
+                    continue
+
+                if len(tag_pair.strip()) == 0:
+                    tags['EMPTY'] += 1
+                    seen_tags.append('EMPTY')
+                    continue
+
+                k, v  = tag_pair.split('=', 1)
+                tags[k] += 1
+                seen_tags.append(k)
+            for tag in seen_tags.uniq:
+                tags_perfile[tag] += 1
+
+
 
 
 
@@ -104,7 +126,7 @@ print("## Tools")
 print()
 print("Tools | Count")
 print("---------- | -----")
-for k, v in Dict(tools).sorted(lambda x: -x[1]):
+for k, v in Dict(tools.most_common(20)).sorted(lambda x: -x[1]):
     print(f"`{k}` | {v}")
 
 print()
@@ -112,7 +134,7 @@ print("## Feature Types")
 print()
 print("Feature | Count")
 print("---------- | -----")
-for k, v in Dict(feature_type).sorted(lambda x: -x[1]):
+for k, v in Dict(feature_type.most_common(20)).sorted(lambda x: -x[1]):
     print(f"`{k}` | {v}")
 
 print()
@@ -122,3 +144,11 @@ print("Score Range | Count")
 print("---------- | -----")
 for k, v in Dict(score_range).sorted(lambda x: -x[1]):
     print(f"`{k}` | {v}")
+
+print()
+print("## Tags")
+print()
+print("Tag        | Value | Percentage Using at least Once")
+print("---------- | ----- | ------------------------------")
+for k, v in Dict(tags.most_common(20)).sorted(lambda x: -x[1]):
+    print(f"`{k}` | {v} | {100 * tags_perfile[k] / file_count:0.2f}%")

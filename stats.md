@@ -48,65 +48,6 @@ Tools | Count
 `example` | 342
 `Glimmer3` | 258
 `maker` | 228
-`protein_coding` | 191
-`TAIR10` | 188
-`AUGUSTUS` | 158
-`GeneMark.hmm` | 142
-`test_source` | 130
-`funannotate` | 116
-`blastn` | 114
-`Genbank` | 109
-`est2genome` | 108
-`Araport11` | 105
-`hg19_knownGene` | 69
-`retained_intron` | 56
-`repeatmasker` | 40
-`snap` | 38
-`est` | 34
-`ALN` | 34
-`aragorn` | 32
-`augustus` | 27
-`nonsense_mediated_decay` | 22
-`exonerate:est2genome` | 22
-`Gene3D` | 22
-`processed_transcript` | 21
-`Pfam` | 21
-`CPT_LipoRy` | 20
-`ITAG_eugene` | 19
-`phytozome6` | 19
-`SUPERFAMILY` | 17
-`Phobius` | 17
-`tbl2gff3` | 12
-`PRINTS` | 11
-`SMART` | 11
-`landmark` | 11
-`antisense` | 10
-`ProDom` | 9
-`exonerate:ungapped:dna2dna` | 8
-`exonerate:protein2genome:local` | 8
-`annotation` | 7
-`InteinFinder` | 7
-`Coils` | 7
-`zonk` | 7
-`CDD` | 6
-`exonerate` | 6
-`processed_pseudogene` | 4
-`PANTHER` | 4
-`predicted` | 4
-`unprocessed_pseudogene` | 3
-`PIRSF` | 3
-`POPB` | 3
-`snRNA` | 2
-`rRNA` | 2
-`ena_mobile_element` | 2
-`exonerate:coding2coding` | 2
-`ProSitePatterns` | 2
-`POPA` | 2
-`POPC` | 2
-`ASM584v2` | 1
-`TIGRFAM` | 1
-`Contig` | 1
-`bare_predicted` | 1
 
 ## Feature Types
 
@@ -132,79 +73,6 @@ Feature | Count
 `terminator` | 260
 `protein_match` | 126
 `sequence_feature` | 89
-`HSP` | 88
-`intron` | 83
-`sequence_variant` | 68
-`non_canonical_five_prime_splice_site` | 47
-`region` | 46
-`transcript` | 45
-`non_canonical_three_prime_splice_site` | 41
-`tRNA` | 41
-`mature_protein_region` | 37
-`experimental_result_region` | 34
-`long_terminal_repeat` | 32
-`repeat_region` | 31
-`remark` | 31
-`binding_site` | 29
-`ARS` | 26
-`noncoding_exon` | 26
-`polypeptide` | 25
-`expressed_sequence_match` | 24
-`Lipobox` | 20
-`cds` | 18
-`nucleotide_to_protein_match` | 16
-`polypeptide_domain` | 15
-`my_feature` | 10
-`motif` | 10
-`DNA` | 9
-`SNP` | 8
-`transposable_element_gene` | 8
-`supercontig` | 7
-`misc_feature` | 7
-`regulatory` | 7
-`micro_array_oligo` | 7
-`nucleotide_match` | 7
-`ncRNA` | 6
-`promoter` | 6
-`recombination_feature` | 6
-`loop` | 6
-`EST_match` | 6
-`chromosome` | 5
-`stop_codon_read_through` | 4
-`pseudogene` | 4
-`peptide_helix` | 4
-`telomere` | 4
-`LTR_retrotransposon` | 4
-`mobile_genetic_element` | 3
-`5'-UTR` | 3
-`ncRNA_gene` | 3
-`gene_component_region` | 3
-`STS` | 3
-`sequence_difference` | 3
-`direct_repeat` | 3
-`snoRNA` | 3
-`BAC` | 2
-`coding` | 2
-`processed_transcript` | 2
-`3'-UTR` | 2
-`biological_region` | 2
-`protein_coding_primary_transcript` | 2
-`UTR` | 2
-`centromere` | 2
-`right_end_read` | 1
-`left_end_read` | 1
-`trace` | 1
-`ultracontig` | 1
-`protein_binding_site` | 1
-`lincRNA_gene` | 1
-`lincRNA` | 1
-`signal_peptide` | 1
-`origin_of_replication` | 1
-`inverted_repeat` | 1
-`scaffold` | 1
-`clone_start` | 1
-`clone_end` | 1
-`snRNA` | 1
 
 ## Scores?
 
@@ -219,3 +87,28 @@ Score Range | Count
 `[-37.0, 336.0]` | 1
 `[-37.0, 207.0]` | 1
 `[0, 1000]` | 1
+
+## Tags
+
+Tag        | Value | Percentage Using at least Once
+---------- | ----- | ------------------------------
+`ID` | 103 | 36.79%
+`Parent` | 98 | 35.00%
+`Name` | 54 | 19.29%
+`Target` | 12 | 4.29%
+`Alias` | 12 | 4.29%
+`product` | 10 | 3.57%
+`date_last_modified` | 9 | 3.21%
+`date_creation` | 9 | 3.21%
+`Note` | 9 | 3.21%
+`Dbxref` | 8 | 2.86%
+`gbkey` | 8 | 2.86%
+`Gap` | 8 | 2.86%
+`locus_tag` | 6 | 2.14%
+`blast_gaps` | 6 | 2.14%
+`blast_score` | 6 | 2.14%
+`protein_id` | 5 | 1.79%
+`transl_table` | 5 | 1.79%
+`evidence` | 5 | 1.79%
+`obsolete_name` | 4 | 1.43%
+`gene` | 3 | 1.07%
