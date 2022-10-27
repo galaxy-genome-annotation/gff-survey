@@ -4,18 +4,18 @@
 
 Header Key | Value | Percentage Using at least Once
 ---------- | ----- | -----------
-`#` | 2313 | 20.71%
-`FASTA` | 4 | 2.86%
-`Index-subfeatures` | 2 | 1.43%
-`NOTE:` | 1 | 0.71%
-`date` | 1 | 0.71%
-`feature-ontology` | 3 | 2.14%
-`gff-version	3` | 3 | 2.14%
-`gff-version   3` | 1 | 0.71%
-`gff-version 3` | 1696 | 90.71%
-`sequence-region` | 1684 | 62.14%
-`source` | 1 | 0.71%
-`species` | 5 | 3.57%
+`#` | 2313 | 20.42%
+`FASTA` | 4 | 2.82%
+`Index-subfeatures` | 2 | 1.41%
+`NOTE:` | 1 | 0.70%
+`date` | 1 | 0.70%
+`feature-ontology` | 3 | 2.11%
+`gff-version	3` | 3 | 2.11%
+`gff-version   3` | 1 | 0.70%
+`gff-version 3` | 1696 | 89.44%
+`sequence-region` | 1684 | 61.27%
+`source` | 1 | 0.70%
+`species` | 5 | 3.52%
 
 ## Tabs
 
@@ -92,23 +92,23 @@ Score Range | Count
 
 Tag        | Value | Percentage Using at least Once
 ---------- | ----- | ------------------------------
-`ID` | 103 | 36.79%
-`Parent` | 98 | 35.00%
-`Name` | 54 | 19.29%
-`Target` | 12 | 4.29%
-`Alias` | 12 | 4.29%
-`product` | 10 | 3.57%
-`date_last_modified` | 9 | 3.21%
-`date_creation` | 9 | 3.21%
-`Note` | 9 | 3.21%
-`Dbxref` | 8 | 2.86%
-`gbkey` | 8 | 2.86%
-`Gap` | 8 | 2.86%
-`locus_tag` | 6 | 2.14%
-`blast_gaps` | 6 | 2.14%
-`blast_score` | 6 | 2.14%
-`protein_id` | 5 | 1.79%
-`transl_table` | 5 | 1.79%
-`evidence` | 5 | 1.79%
-`obsolete_name` | 4 | 1.43%
-`gene` | 3 | 1.07%
+`ID` | 105 | 36.97%
+`Parent` | 100 | 35.21%
+`Name` | 55 | 19.37%
+`Target` | 12 | 4.23%
+`Alias` | 12 | 4.23%
+`product` | 11 | 3.87%
+`date_last_modified` | 9 | 3.17%
+`date_creation` | 9 | 3.17%
+`Note` | 9 | 3.17%
+`Dbxref` | 8 | 2.82%
+`gbkey` | 8 | 2.82%
+`Gap` | 8 | 2.82%
+`blast_gaps` | 7 | 2.46%
+`blast_score` | 7 | 2.46%
+`locus_tag` | 6 | 2.11%
+`protein_id` | 5 | 1.76%
+`transl_table` | 5 | 1.76%
+`evidence` | 5 | 1.76%
+`obsolete_name` | 5 | 1.76%
+`accession` | 4 | 1.41%
