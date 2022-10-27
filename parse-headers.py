@@ -82,13 +82,14 @@ for fn in sorted(glob.glob("**/*.gff3")):
                 # print(line)
             tab_count[parts.length] += 1
 
-            tools[parts[1]] += 1
             feature_type[parts[2]] += 1
             if ':' in parts[2]:
                 feature_type_so[parts[2]] += 1
 
 
         uniq_tools = feature_lines.map(lambda x: x[1]).uniq
+        for tool in uniq_tools:
+            tools[tool] += 1
 
         scores = feature_lines.map(lambda x: x[5]).uniq.select(lambda x: x != '.').map(lambda x: float(x))
         if scores.length > 0:
@@ -157,7 +158,7 @@ print("## Feature Types")
 print()
 print("Feature | Count")
 print("---------- | -----")
-for k, v in Dict(feature_type.most_common(20)).sorted(lambda x: -x[1]):
+for k, v in Dict(feature_type).sorted(lambda x: -x[1]):
     print(f"`{k}` | {v}")
 print()
 print("Feature (Using SO term) | Count")
