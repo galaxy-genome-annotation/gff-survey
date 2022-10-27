@@ -6,13 +6,19 @@ from collections import Counter
 
 headers = Counter()
 headers_perfile = Counter()
+ext = Counter()
 file_count = 0
 
 def stderr(*args):
     print(*args, file=sys.stderr)
 
 
-for fn in glob.glob("**/*.gff3"):
+for fn in glob.glob("**/*.gff3") + glob.glob("**/*.gff"):
+    if fn.endswith('gff3'):
+        ext['gff3'] += 1
+    else:
+        ext['gff'] += 1
+
     file_count += 1
     with open(fn, 'r') as handle:
         lines = List(handle.readlines())
@@ -41,6 +47,13 @@ for fn in glob.glob("**/*.gff3"):
 
 print("# Statistics")
 print()
+print("## Extension")
+print()
+print("File Extension | Count")
+print("---------- | ----- ")
+for k, v in dict(ext).items():
+    print(f"`{k}` | {v}")
+print()
 print("## Headers")
 print()
 print("Header Key | Value | Percentage Using at least Once")
@@ -51,6 +64,7 @@ for k, v in sorted(dict(headers).items(), key=lambda x: x[0]):
 tab_count = Counter()
 tools = Counter()
 feature_type = Counter()
+feature_type_so = Counter()
 score_range = Counter()
 tags = Counter()
 tags_perfile = Counter()
@@ -70,6 +84,9 @@ for fn in sorted(glob.glob("**/*.gff3")):
 
             tools[parts[1]] += 1
             feature_type[parts[2]] += 1
+            if ':' in parts[2]:
+                feature_type_so[parts[2]] += 1
+
 
         uniq_tools = feature_lines.map(lambda x: x[1]).uniq
 
@@ -104,7 +121,11 @@ for fn in sorted(glob.glob("**/*.gff3")):
                     seen_tags.append('EMPTY')
                     continue
 
-                k, v  = tag_pair.split('=', 1)
+                if tag_pair.count('=') > 0:
+                    k, v  = tag_pair.split('=', 1)
+                else:
+                    k = tag_pair + " (Invalid, missing =)"
+
                 tags[k] += 1
                 seen_tags.append(k)
             for tag in seen_tags.uniq:
@@ -137,6 +158,11 @@ print()
 print("Feature | Count")
 print("---------- | -----")
 for k, v in Dict(feature_type.most_common(20)).sorted(lambda x: -x[1]):
+    print(f"`{k}` | {v}")
+print()
+print("Feature (Using SO term) | Count")
+print("---------- | -----")
+for k, v in Dict(feature_type_so).sorted(lambda x: -x[1]):
     print(f"`{k}` | {v}")
 
 print()
