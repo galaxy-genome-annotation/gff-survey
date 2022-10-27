@@ -5,38 +5,38 @@
 File Extension | Count
 ---------- | ----- 
 `gff3` | 153
-`gff` | 10
+`gff` | 11
 
 ## Headers
 
 Header Key | Value | Percentage Using at least Once
 ---------- | ----- | -----------
-`#` | 2314 | 18.40%
-`FASTA` | 6 | 3.68%
-`Index-subfeatures` | 2 | 1.23%
+`#` | 2314 | 18.29%
+`FASTA` | 6 | 3.66%
+`Index-subfeatures` | 2 | 1.22%
 `NOTE:` | 1 | 0.61%
 `Type` | 1 | 0.61%
 `attribute-ontology` | 1 | 0.61%
 `color-code` | 1 | 0.61%
-`date` | 2 | 1.23%
-`feature-ontology` | 5 | 3.07%
+`date` | 2 | 1.22%
+`feature-ontology` | 5 | 3.05%
 `genome-build` | 1 | 0.61%
-`gff-version	3` | 3 | 1.84%
+`gff-version	3` | 3 | 1.83%
 `gff-version   3` | 1 | 0.61%
 `gff-version 2` | 1 | 0.61%
-`gff-version 3` | 1705 | 83.44%
+`gff-version 3` | 1706 | 83.54%
 `hdr` | 1 | 0.61%
 `history` | 3 | 0.61%
 `line-order` | 1 | 0.61%
 `max-num-mismatches` | 1 | 0.61%
 `max-read-length` | 1 | 0.61%
 `primer-base` | 1 | 0.61%
-`sequence-region` | 1712 | 55.83%
+`sequence-region` | 1720 | 56.10%
 `solid-gff-version` | 1 | 0.61%
 `source` | 1 | 0.61%
 `source-ontology` | 1 | 0.61%
 `source-version` | 1 | 0.61%
-`species` | 6 | 3.68%
+`species` | 6 | 3.66%
 `time` | 1 | 0.61%
 
 ## Tabs
@@ -192,21 +192,21 @@ Score Range | Count
 
 Tag        | Value | Percentage Using at least Once
 ---------- | ----- | ------------------------------
-`ID` | 114 | 36.08%
-`Parent` | 103 | 32.59%
-`Name` | 57 | 18.04%
-`Target` | 12 | 3.80%
-`Alias` | 12 | 3.80%
-`product` | 11 | 3.48%
-`date_last_modified` | 9 | 2.85%
-`date_creation` | 9 | 2.85%
-`Note` | 9 | 2.85%
-`Dbxref` | 8 | 2.53%
-`gbkey` | 8 | 2.53%
-`Gap` | 8 | 2.53%
-`blast_gaps` | 7 | 2.22%
-`blast_score` | 7 | 2.22%
-`locus_tag` | 6 | 1.90%
+`ID` | 114 | 35.96%
+`Parent` | 103 | 32.49%
+`Name` | 57 | 17.98%
+`Target` | 12 | 3.79%
+`Alias` | 12 | 3.79%
+`product` | 11 | 3.47%
+`date_last_modified` | 9 | 2.84%
+`date_creation` | 9 | 2.84%
+`Note` | 9 | 2.84%
+`Dbxref` | 8 | 2.52%
+`gbkey` | 8 | 2.52%
+`Gap` | 8 | 2.52%
+`blast_gaps` | 7 | 2.21%
+`blast_score` | 7 | 2.21%
+`locus_tag` | 6 | 1.89%
 `EMPTY` | 5 | 1.58%
 `protein_id` | 5 | 1.58%
 `transl_table` | 5 | 1.58%
