@@ -60,8 +60,8 @@ Tools | Count
 `maker` | 6
 `getOrfsOrCds` | 6
 `blast` | 6
-`est2genome` | 6
 `blastn` | 6
+`est2genome` | 6
 `progressiveMauve` | 5
 `AU9` | 5
 `glimmer` | 4
@@ -192,23 +192,65 @@ Score Range | Count
 
 Tag        | Value | Percentage Using at least Once
 ---------- | ----- | ------------------------------
-`ID` | 114 | 35.96%
-`Parent` | 103 | 32.49%
-`Name` | 57 | 17.98%
-`Target` | 12 | 3.79%
-`Alias` | 12 | 3.79%
-`product` | 11 | 3.47%
-`date_last_modified` | 9 | 2.84%
-`date_creation` | 9 | 2.84%
-`Note` | 9 | 2.84%
-`Dbxref` | 8 | 2.52%
-`gbkey` | 8 | 2.52%
-`Gap` | 8 | 2.52%
-`blast_gaps` | 7 | 2.21%
-`blast_score` | 7 | 2.21%
-`locus_tag` | 6 | 1.89%
-`EMPTY` | 5 | 1.58%
-`protein_id` | 5 | 1.58%
-`transl_table` | 5 | 1.58%
-`evidence` | 5 | 1.58%
-`obsolete_name` | 5 | 1.58%
+`Parent` | 125841 | 39697.48%
+`qseq` | 69585 | 21951.10%
+`sseq` | 69585 | 21951.10%
+`ID` | 66745 | 21055.21%
+`__.__` | 50198 | 15835.33%
+`Name` | 35622 | 11237.22%
+`Target` | 9143 | 2884.23%
+`blast_gaps` | 8319 | 2624.29%
+`blast_score` | 8319 | 2624.29%
+`product` | 6136 | 1935.65%
+`Target_protein` | 6014 | 1897.16%
+`date_last_modified` | 5953 | 1877.92%
+`date_creation` | 5953 | 1877.92%
+`Gap` | 5901 | 1861.51%
+`blast_bitscore` | 5504 | 1736.28%
+`blast_evalue` | 5504 | 1736.28%
+`blast_gapopen` | 5504 | 1736.28%
+`blast_length` | 5504 | 1736.28%
+`blast_mismatch` | 5504 | 1736.28%
+`blast_nident` | 5504 | 1736.28%
+
+## Percent Encoding
+
+Tag        | Value | Count
+---------- | ----- | -----
+%20 | ` ` | 13404
+%2A | `*` | 5069
+%2C | `,` | 3123
+%2B | `+` | 1415
+%7C | `|` | 1327
+%28 | `(` | 979
+%29 | `)` | 979
+%40 | `@` | 856
+%3B | `;` | 832
+%27 | `'` | 596
+%25 | `%` | 154
+%23 | `#` | 118
+%C3 | `�` | 115
+%C2 | `�` | 106
+%2F | `/` | 74
+%C4 | `�` | 26
+%3D | `=` | 10
+%87 | `�` | 8
+%80 | `�` | 6
+%83 | `�` | 6
+
+## Non-percent encoded values
+
+Tag        | Count
+---------- | -----
+` ` | 86193
+
+## Trailing Semicolon in field 9
+
+Tag        | Count
+---------- | -----
+`random-gff3s-from-helena/yeast_chr1+2.gff3` | 616
+`random-gff3s-from-helena/Genus_species.gff3` | 116
+`random-gff3s-from-helena/picard_CollectRnaSeqMetrics.gff3` | 69
+`random-gff3s-from-helena/annot_mapped.gff3` | 38
+`gffutils/glimmer_nokeyval.gff3` | 4
+`gffutils/gms2_example.gff3` | 4

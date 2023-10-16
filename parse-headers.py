@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+import re
 import sys
 import glob
 from ruby import List, String, Dict
@@ -68,6 +69,10 @@ feature_type_so = Counter()
 score_range = Counter()
 tags = Counter()
 tags_perfile = Counter()
+percent_encoding = Counter()
+percent_fail = Counter()
+percent_unencoded = Counter()
+trailing_semicolon = Counter()
 
 for fn in sorted(glob.glob("**/*.gff3")):
     file_count += 1
@@ -85,6 +90,37 @@ for fn in sorted(glob.glob("**/*.gff3")):
             feature_type[parts[2]] += 1
             if ':' in parts[2]:
                 feature_type_so[parts[2]] += 1
+
+            if len(parts) > 8:
+                seen_tags = List()
+
+                for encoded in re.findall('%[0-9a-fA-F][0-9a-fA-F]', parts[8]):
+                    percent_encoding[encoded] += 1
+                for unencoded in re.findall('( |\t|\n|%[^A-Fa-f0-9][A-Fa-f0-9]|%[A-Fa-f0-9][^A-Fa-f0-9]|\r)', parts[8]):
+                    percent_unencoded[unencoded] += 1
+
+                if len(parts[8]) > 1 and parts[8][-1] == ';':
+                    trailing_semicolon[fn] += 1
+                for tag_pair in parts[8].split(';'):
+                    if tag_pair.strip() == '.':
+                        tags['__.__'] += 1
+                        seen_tags.append('__.__')
+                        continue
+
+                    if len(tag_pair.strip()) == 0:
+                        tags['EMPTY'] += 1
+                        seen_tags.append('EMPTY')
+                        continue
+
+                    if tag_pair.count('=') > 0:
+                        k, v  = tag_pair.split('=', 1)
+                    else:
+                        k = tag_pair + " (Invalid, missing =)"
+
+                    tags[k] += 1
+                    seen_tags.append(k)
+                for tag in seen_tags.uniq:
+                    tags_perfile[tag] += 1
 
 
         uniq_tools = feature_lines.map(lambda x: x[1]).uniq
@@ -108,29 +144,6 @@ for fn in sorted(glob.glob("**/*.gff3")):
                 # stderr(sus_min, sus_max)
         else:
             score_range['Does Not Use Scores'] += 1
-
-        if len(parts) > 8:
-            seen_tags = List()
-            for tag_pair in parts[8].split(';'):
-                if tag_pair.strip() == '.':
-                    tags['__.__'] += 1
-                    seen_tags.append('__.__')
-                    continue
-
-                if len(tag_pair.strip()) == 0:
-                    tags['EMPTY'] += 1
-                    seen_tags.append('EMPTY')
-                    continue
-
-                if tag_pair.count('=') > 0:
-                    k, v  = tag_pair.split('=', 1)
-                else:
-                    k = tag_pair + " (Invalid, missing =)"
-
-                tags[k] += 1
-                seen_tags.append(k)
-            for tag in seen_tags.uniq:
-                tags_perfile[tag] += 1
 
 
 
@@ -181,3 +194,32 @@ print("Tag        | Value | Percentage Using at least Once")
 print("---------- | ----- | ------------------------------")
 for k, v in Dict(tags.most_common(20)).sorted(lambda x: -x[1]):
     print(f"`{k}` | {v} | {100 * tags_perfile[k] / file_count:0.2f}%")
+
+print()
+print("## Percent Encoding")
+print()
+print("Tag        | Value | Count")
+print("---------- | ----- | -----")
+from urllib.parse import unquote
+for k, v in percent_encoding.most_common(20):
+    # percent unencode the key
+    q = unquote(k)
+    print(f"{k} | `{q}` | {v}")
+
+
+print()
+print("## Non-percent encoded values")
+print()
+print("Tag        | Count")
+print("---------- | -----")
+for k, v in percent_unencoded.most_common(20):
+    print(f"`{k}` | {v}")
+
+
+print()
+print("## Trailing Semicolon in field 9")
+print()
+print("Tag        | Count")
+print("---------- | -----")
+for k, v in trailing_semicolon.most_common(20):
+    print(f"`{k}` | {v}")
