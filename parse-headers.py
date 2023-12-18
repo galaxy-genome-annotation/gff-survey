@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+import gzip
 import re
 import sys
 import glob
@@ -14,15 +15,20 @@ def stderr(*args):
     print(*args, file=sys.stderr)
 
 
-for fn in glob.glob("**/*.gff3") + glob.glob("**/*.gff"):
+for fn in glob.glob("**/*.gff3") + glob.glob("**/*.gff") + glob.glob("**/*.gff.gz"):
     if fn.endswith('gff3'):
         ext['gff3'] += 1
     else:
         ext['gff'] += 1
 
     file_count += 1
-    with open(fn, 'r') as handle:
-        lines = List(handle.readlines())
+
+    if fn.endswith('gz'):
+        with gzip.open(fn, 'rt') as handle:
+            lines = List(handle.read(4096).split('\n'))
+    else:
+        with open(fn, 'r') as handle:
+            lines = List(handle.read(4096).split('\n'))
 
     header_lines = lines.strip.select(lambda x: x.startswith('##'))
 
@@ -74,80 +80,88 @@ percent_fail = Counter()
 percent_unencoded = Counter()
 trailing_semicolon = Counter()
 
-for fn in sorted(glob.glob("**/*.gff3")):
+for fn in sorted(glob.glob("**/*.gff3")) + sorted(glob.glob("**/*.gff.gz")):
     file_count += 1
-    with open(fn, 'r') as handle:
-        lines = List(handle.readlines())
-        feature_lines = lines.strip.select(lambda x: not x.startswith('##')) \
-            .select(lambda x: x.count('\t') > 5) \
-            .map(lambda x: List(x.split('\t')))
+    if fn.endswith('gz'):
+        handle = gzip.open(fn, 'rt')
+    else:
+        handle = open(fn, 'r')
 
-        for parts in feature_lines:
-            # if line.count('\t') != 8:
-                # print(line)
-            tab_count[parts.length] += 1
+    uniq_tools_this_file = []
+    scores_this_file = List()
 
-            feature_type[parts[2]] += 1
-            if ':' in parts[2]:
-                feature_type_so[parts[2]] += 1
+    for line in handle:
+        if line.startswith('##'):
+            continue
+        elif line.count('\t') <= 5:
+            continue
 
-            if len(parts) > 8:
-                seen_tags = List()
+        parts = line.split('\t')
+        tab_count[len(parts)] += 1
 
-                for encoded in re.findall('%[0-9a-fA-F][0-9a-fA-F]', parts[8]):
-                    percent_encoding[encoded] += 1
-                for unencoded in re.findall('( |\t|\n|%[^A-Fa-f0-9][A-Fa-f0-9]|%[A-Fa-f0-9][^A-Fa-f0-9]|\r)', parts[8]):
-                    percent_unencoded[unencoded] += 1
+        feature_type[parts[2]] += 1
+        if ':' in parts[2]:
+            feature_type_so[parts[2]] += 1
 
-                if len(parts[8]) > 1 and parts[8][-1] == ';':
-                    trailing_semicolon[fn] += 1
-                for tag_pair in parts[8].split(';'):
-                    if tag_pair.strip() == '.':
-                        tags['__.__'] += 1
-                        seen_tags.append('__.__')
-                        continue
+        if len(parts) > 8:
+            seen_tags = List()
 
-                    if len(tag_pair.strip()) == 0:
-                        tags['EMPTY'] += 1
-                        seen_tags.append('EMPTY')
-                        continue
+            for encoded in re.findall('%[0-9a-fA-F][0-9a-fA-F]', parts[8]):
+                percent_encoding[encoded] += 1
+            for unencoded in re.findall('( |\t|\n|%[^A-Fa-f0-9][A-Fa-f0-9]|%[A-Fa-f0-9][^A-Fa-f0-9]|\r)', parts[8]):
+                percent_unencoded[unencoded] += 1
 
-                    if tag_pair.count('=') > 0:
-                        k, v  = tag_pair.split('=', 1)
-                    else:
-                        k = tag_pair + " (Invalid, missing =)"
+            if len(parts[8]) > 1 and parts[8][-1] == ';':
+                trailing_semicolon[fn] += 1
+            for tag_pair in parts[8].split(';'):
+                if tag_pair.strip() == '.':
+                    tags['__.__'] += 1
+                    seen_tags.append('__.__')
+                    continue
 
-                    tags[k] += 1
-                    seen_tags.append(k)
-                for tag in seen_tags.uniq:
-                    tags_perfile[tag] += 1
+                if len(tag_pair.strip()) == 0:
+                    tags['EMPTY'] += 1
+                    seen_tags.append('EMPTY')
+                    continue
+
+                if tag_pair.count('=') > 0:
+                    k, v  = tag_pair.split('=', 1)
+                else:
+                    k = tag_pair + " (Invalid, missing =)"
+
+                tags[k] += 1
+                seen_tags.append(k)
+            for tag in seen_tags.uniq:
+                tags_perfile[tag] += 1
 
 
-        uniq_tools = feature_lines.map(lambda x: x[1]).uniq
-        for tool in uniq_tools:
-            tools[tool] += 1
+        if parts[1] not in uniq_tools_this_file:
+            uniq_tools_this_file.append(parts[1])
 
-        scores = feature_lines.map(lambda x: x[5]).uniq.select(lambda x: x != '.').map(lambda x: float(x))
-        if scores.length > 0:
-            sus_min = min(scores)
-            sus_max = max(scores)
+        scores_this_file.append(parts[5])
 
-            if 0 <= sus_min <= sus_max <= 100:
-                score_range['[0, 100]'] +=1
-            elif 0 <= sus_min <= sus_max <= 1000:
-                score_range['[0, 1000]'] +=1
-            elif 0 <= sus_min <= sus_max <= 10000:
-                score_range['[0, 10000]'] +=1
-            else:
-                # very sus.
-                score_range[f'[{sus_min}, {sus_max}]'] +=1
-                # stderr(sus_min, sus_max)
+    for un in uniq_tools_this_file:
+        tools[un] += 1
+
+    scores = scores_this_file.uniq.select(lambda x: x != '.').map(lambda x: float(x))
+    if scores.length > 0:
+        sus_min = min(scores)
+        sus_max = max(scores)
+
+        if 0 <= sus_min <= sus_max <= 100:
+            score_range['[0, 100]'] +=1
+        elif 0 <= sus_min <= sus_max <= 1000:
+            score_range['[0, 1000]'] +=1
+        elif 0 <= sus_min <= sus_max <= 10000:
+            score_range['[0, 10000]'] +=1
         else:
-            score_range['Does Not Use Scores'] += 1
+            # very sus.
+            score_range[f'[{sus_min}, {sus_max}]'] +=1
+            # stderr(sus_min, sus_max)
+    else:
+        score_range['Does Not Use Scores'] += 1
 
-
-
-
+    handle.close()
 
 print()
 print("## Tabs")
