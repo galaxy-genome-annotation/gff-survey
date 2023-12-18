@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+import tqdm
 import gzip
 import re
 import sys
@@ -90,7 +91,7 @@ for fn in sorted(glob.glob("**/*.gff3")) + sorted(glob.glob("**/*.gff.gz")):
     uniq_tools_this_file = []
     scores_this_file = List()
 
-    for line in handle:
+    for line in tqdm.tqdm(handle):
         if line.startswith('##'):
             continue
         elif line.count('\t') <= 5:
@@ -111,7 +112,7 @@ for fn in sorted(glob.glob("**/*.gff3")) + sorted(glob.glob("**/*.gff.gz")):
             for unencoded in re.findall('( |\t|\n|%[^A-Fa-f0-9][A-Fa-f0-9]|%[A-Fa-f0-9][^A-Fa-f0-9]|\r)', parts[8]):
                 percent_unencoded[unencoded] += 1
 
-            if len(parts[8]) > 1 and parts[8][-1] == ';':
+            if len(parts[8]) > 1 and line[-2] == ';':
                 trailing_semicolon[fn] += 1
             for tag_pair in parts[8].split(';'):
                 if tag_pair.strip() == '.':
