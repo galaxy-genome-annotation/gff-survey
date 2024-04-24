@@ -16,7 +16,10 @@ def stderr(*args):
     print(*args, file=sys.stderr)
 
 
-for fn in glob.glob("**/*.gff3") + glob.glob("**/*.gff") + glob.glob("**/*.gff.gz"):
+FILES = sorted(list(set(glob.glob("*/*.gff3") + glob.glob("**/*.gff") + glob.glob("**/*.gff.gz"))))
+stderr(FILES)
+
+for fn in FILES:
     if fn.endswith('gff3'):
         ext['gff3'] += 1
     else:
@@ -82,7 +85,7 @@ percent_unencoded = Counter()
 trailing_semicolon = Counter()
 top_level_features = Counter()
 
-for fn in sorted(glob.glob("**/*.gff3")) + sorted(glob.glob("**/*.gff.gz")):
+for fn in FILES:
     file_count += 1
     if fn.endswith('gz'):
         handle = gzip.open(fn, 'rt')
