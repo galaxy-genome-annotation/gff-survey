@@ -80,6 +80,7 @@ percent_encoding = Counter()
 percent_fail = Counter()
 percent_unencoded = Counter()
 trailing_semicolon = Counter()
+top_level_features = Counter()
 
 for fn in sorted(glob.glob("**/*.gff3")) + sorted(glob.glob("**/*.gff.gz")):
     file_count += 1
@@ -135,6 +136,8 @@ for fn in sorted(glob.glob("**/*.gff3")) + sorted(glob.glob("**/*.gff.gz")):
             for tag in seen_tags.uniq:
                 tags_perfile[tag] += 1
 
+            if 'Parent' not in seen_tags and 'parent' not in seen_tags:
+                top_level_features[parts[2]] += 1
 
         if parts[1] not in uniq_tools_this_file:
             uniq_tools_this_file.append(parts[1])
@@ -237,4 +240,12 @@ print()
 print("Tag        | Count")
 print("---------- | -----")
 for k, v in trailing_semicolon.most_common(20):
+    print(f"`{k}` | {v}")
+
+print()
+print("## Top Level Features")
+print()
+print("Tag        | Count")
+print("---------- | -----")
+for k, v in top_level_features.most_common(20):
     print(f"`{k}` | {v}")

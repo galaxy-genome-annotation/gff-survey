@@ -5,45 +5,45 @@
 File Extension | Count
 ---------- | ----- 
 `gff3` | 153
-`gff` | 12
+`gff` | 13
 
 ## Headers
 
 Header Key | Value | Percentage Using at least Once
 ---------- | ----- | -----------
-`#` | 59 | 17.58%
-`FASTA` | 2 | 1.21%
-`Index-subfeatures` | 2 | 1.21%
-`NOTE:` | 1 | 0.61%
-`Type` | 1 | 0.61%
-`attribute-ontology` | 1 | 0.61%
-`color-code` | 1 | 0.61%
-`date` | 2 | 1.21%
-`feature-ontology` | 6 | 3.64%
-`genome-build` | 2 | 1.21%
-`gff-version	3` | 3 | 1.82%
-`gff-version   3` | 1 | 0.61%
-`gff-version 2` | 1 | 0.61%
-`gff-version 3` | 163 | 83.03%
-`hdr` | 1 | 0.61%
-`history` | 3 | 0.61%
-`line-order` | 1 | 0.61%
-`max-num-mismatches` | 1 | 0.61%
-`max-read-length` | 1 | 0.61%
-`primer-base` | 1 | 0.61%
-`sequence-region` | 238 | 56.36%
-`solid-gff-version` | 1 | 0.61%
-`source` | 1 | 0.61%
-`source-ontology` | 1 | 0.61%
-`source-version` | 1 | 0.61%
-`species` | 7 | 4.24%
-`time` | 1 | 0.61%
+`#` | 59 | 17.47%
+`FASTA` | 2 | 1.20%
+`Index-subfeatures` | 2 | 1.20%
+`NOTE:` | 1 | 0.60%
+`Type` | 1 | 0.60%
+`attribute-ontology` | 1 | 0.60%
+`color-code` | 1 | 0.60%
+`date` | 2 | 1.20%
+`feature-ontology` | 6 | 3.61%
+`genome-build` | 2 | 1.20%
+`gff-version	3` | 3 | 1.81%
+`gff-version   3` | 1 | 0.60%
+`gff-version 2` | 1 | 0.60%
+`gff-version 3` | 164 | 83.13%
+`hdr` | 1 | 0.60%
+`history` | 3 | 0.60%
+`line-order` | 1 | 0.60%
+`max-num-mismatches` | 1 | 0.60%
+`max-read-length` | 1 | 0.60%
+`primer-base` | 1 | 0.60%
+`sequence-region` | 274 | 56.63%
+`solid-gff-version` | 1 | 0.60%
+`source` | 1 | 0.60%
+`source-ontology` | 1 | 0.60%
+`source-version` | 1 | 0.60%
+`species` | 8 | 4.82%
+`time` | 1 | 0.60%
 
 ## Tabs
 
 Tabs In Line | Count
 ---------- | -----
-`9` | 31791150
+`9` | 1203946
 
 ## Tools
 
@@ -74,91 +74,85 @@ Tools | Count
 
 Feature | Count
 ---------- | -----
-`match_part` | 19017745
-`match` | 9222016
-`orthologous_to` | 1391352
-`oligo` | 254584
-`TF_binding_site` | 240700
-`paralogous_to` | 223056
-`polypeptide_region` | 208999
-`CDS` | 141116
-`RNAi_reagent` | 135882
-`polyA_site` | 106698
-`exon` | 90507
-`transposable_element_insertion_site` | 72157
-`intron` | 72144
-`exon_junction` | 71483
-`BAC_cloned_genomic_insert` | 50389
+`match_part` | 644648
+`match` | 314924
+`orthologous_to` | 52274
 `Z_over_Input` | 50198
-`region` | 48817
-`TSS` | 43461
-`five_prime_UTR` | 40380
-`regulatory_region` | 38624
-`mRNA` | 36357
-`polypeptide` | 30827
-`three_prime_UTR` | 30245
-`gene` | 28150
-`orthologous_region` | 18667
-`sgRNA` | 16792
-`PCR_product` | 14095
-`chromosome_breakpoint` | 9955
-`repeat_region` | 9073
-`origin_of_replication` | 8063
-`insulator` | 7683
-`point_mutation` | 6805
-`transposable_element` | 5896
+`CDS` | 30326
+`gene` | 10921
+`paralogous_to` | 8610
+`oligo` | 8303
+`TF_binding_site` | 8227
+`exon` | 7717
+`mRNA` | 6592
+`polypeptide_region` | 6555
 `Shine_Dalgarno_sequence` | 5813
-`chromosome_band` | 5770
 `Match` | 5635
-`deletion` | 5444
-`ncRNA` | 3066
-`insertion_site` | 2540
+`RNAi_reagent` | 4692
+`five_prime_UTR` | 3418
+`polyA_site` | 3418
+`three_prime_UTR` | 2702
+`transposable_element_insertion_site` | 2427
+`intron` | 2321
+`exon_junction` | 2267
 `contig` | 2204
-`modified_RNA_base_feature` | 2004
-`delins` | 1907
-`golden_path` | 1870
+`golden_path` | 1817
+`BAC_cloned_genomic_insert` | 1570
+`TSS` | 1551
+`region` | 1485
 `stop_codon` | 1425
 `start_codon` | 1423
-`protein_binding_site` | 1402
-`syntenic_region` | 978
+`regulatory_region` | 1364
+`polypeptide` | 1062
+`sgRNA` | 940
 `Topological domain` | 898
-`rescue_region` | 872
-`miRNA` | 485
+`orthologous_region` | 646
+`deletion` | 540
+`PCR_product` | 500
 `Transmembrane` | 454
 `Chain` | 444
-`pseudogene` | 369
-`tRNA` | 353
-`snoRNA` | 273
-`pre_miRNA` | 262
+`chromosome_breakpoint` | 350
+`repeat_region` | 313
+`origin_of_replication` | 274
 `terminator` | 260
-`insertion` | 251
-`tandem_repeat` | 246
-`MNV` | 232
-`sequence_variant` | 138
+`insulator` | 252
+`point_mutation` | 238
+`delins` | 181
+`chromosome_band` | 139
+`ncRNA` | 138
 `protein_match` | 126
-`rRNA` | 115
 `sequence_feature` | 106
 `HSP` | 88
-`complex_substitution` | 70
-`sequence_alteration` | 54
+`insertion_site` | 82
+`sequence_variant` | 76
+`protein_binding_site` | 59
+`tandem_repeat` | 58
+`tRNA` | 54
+`transposable_element` | 49
 `non_canonical_five_prime_splice_site` | 47
 `transcript` | 45
-`mature_protein_region` | 44
+`rescue_region` | 44
 `non_canonical_three_prime_splice_site` | 41
+`mature_protein_region` | 38
 `experimental_result_region` | 34
-`snRNA` | 33
 `long_terminal_repeat` | 32
 `remark` | 31
 `binding_site` | 29
+`modified_RNA_base_feature` | 28
 `ARS` | 26
 `noncoding_exon` | 26
+`insertion` | 25
 `expressed_sequence_match` | 24
 `Lipobox` | 20
+`syntenic_region` | 20
 `cds` | 18
 `nucleotide_to_protein_match` | 16
 `polypeptide_domain` | 15
+`pseudogene` | 14
+`MNV` | 11
 `my_feature` | 10
 `motif` | 10
+`miRNA` | 10
 `DNA` | 9
 `misc_feature` | 8
 `SNP` | 8
@@ -171,11 +165,15 @@ Feature | Count
 `recombination_feature` | 6
 `loop` | 6
 `EST_match` | 6
+`snoRNA` | 6
+`pre_miRNA` | 6
 `chromosome` | 5
 `stop_codon_read_through` | 4
 `peptide_helix` | 4
 `telomere` | 4
 `LTR_retrotransposon` | 4
+`snRNA` | 4
+`complex_substitution` | 4
 `mobile_genetic_element` | 3
 `5'-UTR` | 3
 `ncRNA_gene` | 3
@@ -183,6 +181,7 @@ Feature | Count
 `STS` | 3
 `sequence_difference` | 3
 `direct_repeat` | 3
+`sequence_alteration` | 3
 `BAC` | 2
 `coding` | 2
 `processed_transcript` | 2
@@ -203,7 +202,6 @@ Feature | Count
 `scaffold` | 1
 `clone_start` | 1
 `clone_end` | 1
-`DNA_motif` | 1
 
 Feature (Using SO term) | Count
 ---------- | -----
@@ -222,43 +220,42 @@ Score Range | Count
 `[-37.0, 336.0]` | 1
 `[-37.0, 207.0]` | 1
 `[0, 1000]` | 1
-`[-160.902, 93124.0]` | 1
+`[-33.075, 76535.0]` | 1
 
 ## Tags
 
 Tag        | Value | Percentage Using at least Once
 ---------- | ----- | ------------------------------
-`Name` | 31237896 | 9792443.89%
-`Target` | 26435842 | 8287097.81%
-`target_type` | 26183998 | 8208149.84%
-`Parent` | 19477604 | 6105831.97%
-`ID` | 12372165 | 3878421.63%
-`program` | 9194518 | 2882284.64%
-`programversion` | 9194518 | 2882284.64%
-`sourcename` | 9194518 | 2882284.64%
-`Dbxref` | 2931589 | 918993.42%
-`to_species` | 1634053 | 512242.32%
-`to_name` | 1614408 | 506084.01%
-`diopt_source` | 1614408 | 506084.01%
-`Alias` | 903668 | 283281.50%
-`library` | 648286 | 203224.45%
-`associated_genes` | 292170 | 91589.34%
-`bound_moiety` | 290879 | 91184.64%
-`domain_name_abbreviation` | 106469 | 33375.86%
-`associated_with` | 91019 | 28532.60%
-`derived_comput_cyto_location` | 80337 | 25184.01%
-`exonA` | 71483 | 22408.46%
+`Name` | 1019790 | 318684.38%
+`Target` | 826623 | 258319.69%
+`target_type` | 808204 | 252563.75%
+`Parent` | 705394 | 220435.62%
+`ID` | 485966 | 151864.38%
+`program` | 306471 | 95772.19%
+`programversion` | 306471 | 95772.19%
+`sourcename` | 306471 | 95772.19%
+`Dbxref` | 107589 | 33621.56%
+`qseq` | 69585 | 21745.31%
+`sseq` | 69585 | 21745.31%
+`to_species` | 61550 | 19234.38%
+`to_name` | 60884 | 19026.25%
+`diopt_source` | 60884 | 19026.25%
+`__.__` | 50198 | 15686.88%
+`Alias` | 32693 | 10216.56%
+`library` | 22174 | 6929.38%
+`associated_genes` | 10309 | 3221.56%
+`bound_moiety` | 9769 | 3052.81%
+`blast_gaps` | 8319 | 2599.69%
 
 ## Percent Encoding
 
 Tag        | Value | Count
 ---------- | ----- | -----
-%3D | `=` | 241459
-%2C | `,` | 84219
-%3B | `;` | 47803
-%20 | ` ` | 13803
+%20 | ` ` | 13404
+%3D | `=` | 9293
+%2C | `,` | 5843
 %2A | `*` | 5069
-%26 | `&` | 3666
+%3B | `;` | 2078
 %2B | `+` | 1415
 %7C | `|` | 1327
 %28 | `(` | 979
@@ -266,6 +263,7 @@ Tag        | Value | Count
 %40 | `@` | 856
 %27 | `'` | 596
 %25 | `%` | 154
+%26 | `&` | 144
 %23 | `#` | 118
 %C3 | `�` | 115
 %C2 | `�` | 106
@@ -278,9 +276,9 @@ Tag        | Value | Count
 
 Tag        | Count
 ---------- | -----
-` ` | 82199049
+` ` | 2640352
 `
-` | 31791149
+` | 1203945
 
 ## Trailing Semicolon in field 9
 
@@ -288,7 +286,31 @@ Tag        | Count
 ---------- | -----
 `random-gff3s-from-helena/yeast_chr1+2.gff3` | 616
 `random-gff3s-from-helena/Genus_species.gff3` | 116
-`random-gff3s-from-helena/picard_CollectRnaSeqMetrics.gff3` | 69
 `random-gff3s-from-helena/annot_mapped.gff3` | 38
 `gffutils/glimmer_nokeyval.gff3` | 4
 `gffutils/gms2_example.gff3` | 4
+
+## Top Level Features
+
+Tag        | Count
+---------- | -----
+`match` | 313669
+`orthologous_to` | 52274
+`Z_over_Input` | 50198
+`gene` | 10921
+`paralogous_to` | 8610
+`oligo` | 8303
+`TF_binding_site` | 8227
+`polypeptide_region` | 6555
+`Match` | 5635
+`CDS` | 5407
+`RNAi_reagent` | 4692
+`polyA_site` | 3414
+`transposable_element_insertion_site` | 2427
+`exon_junction` | 2267
+`golden_path` | 1817
+`BAC_cloned_genomic_insert` | 1570
+`TSS` | 1551
+`region` | 1475
+`regulatory_region` | 1364
+`polypeptide` | 1062
