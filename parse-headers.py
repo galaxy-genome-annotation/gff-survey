@@ -231,7 +231,7 @@ print()
 print("Tag        | Count")
 print("---------- | -----")
 for k, v in percent_unencoded.most_common(20):
-    print(f"`{k}` | {v}")
+    print(f"`{hex(ord(k))}` | {v}")
 
 
 print()
@@ -247,5 +247,5 @@ print("## Top Level Features")
 print()
 print("Tag        | Count")
 print("---------- | -----")
-for k, v in top_level_features.most_common(20):
+for k, v in Dict(top_level_features).sorted(lambda x: -x[1]):
     print(f"`{k}` | {v}")
